@@ -19,15 +19,29 @@ ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_zlabel('Z')
 
-
+x_coordinates=np.array([])
+y_coordinates=np.array([])
+z_coordinates=np.array([])
 with open("data.csv") as datafile:
     for line in datafile:
         if line=="\n":
             continue
         data=line.strip().split(",")
-        x=data[0]
-        y=data[1]
-        z=data[2]
 
+        # csv format:
+    
+        x=float(data[0])
+        y=float(data[1])
+        z=float(data[2])
+
+
+
+        print(x,y,z)
+        x_coordinates=np.append(x_coordinates,x)
+        y_coordinates=np.append(y_coordinates,y)
+        z_coordinates=np.append(z_coordinates,z)
+
+print(x_coordinates,y_coordinates,z_coordinates)
+ax.scatter(xs=x,ys=y,zs=z,c="red")
 
 plt.show()
