@@ -42,6 +42,6 @@ with open("data.csv") as datafile:
         z_coordinates=np.append(z_coordinates,z)
 
 print(x_coordinates,y_coordinates,z_coordinates)
-ax.scatter(xs=x,ys=y,zs=z,c="red")
+ax.scatter(xs=x_coordinates,ys=y_coordinates,zs=z_coordinates,c="red")
 
 plt.show()
